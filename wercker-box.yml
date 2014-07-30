@@ -2,7 +2,7 @@
 #
 # DO NOT PUT CONFIDENTIAL INFORMATION OR CREDENTIALS IN THIS
 #
-name: docker-oraclejdk-mvn-py
+name: docker-oraclejdk-mvn-node-py
 version: 1.0
 inherits: wercker/wercker-labs-docker
 type: service
@@ -16,7 +16,8 @@ keywords:
  - oracle
  - java
 packages:
- - node
+ - nodejs
+ - npm
 script: |
   export DEBIAN_FRONTEND=noninteractive
   sudo apt-get install python-software-properties -y
