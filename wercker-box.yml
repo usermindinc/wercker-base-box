@@ -15,9 +15,6 @@ keywords:
  - docker
  - oracle
  - java
-packages:
- - nodejs
- - npm
 script: |
   export DEBIAN_FRONTEND=noninteractive
   sudo apt-get install python-software-properties -y
@@ -28,3 +25,6 @@ script: |
   sudo apt-get update
   sudo apt-get install oracle-java8-installer maven python2.7 -y
   sudo apt-get install oracle-java8-set-default
+  sudo apt-get install nodejs npm
+env:
+  FOO: "BAR"
