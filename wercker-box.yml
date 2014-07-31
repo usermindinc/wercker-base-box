@@ -1,7 +1,7 @@
 name: docker-oraclejdk-mvn-node-py
-version: 1.0
+version: 1.0.0
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
-type: service
+type: main
 platform: ubuntu@12.04
 description: generic build box
 keywords:
@@ -22,6 +22,5 @@ script: |
   sudo apt-get install oracle-java8-installer maven python2.7 -y
   sudo apt-get install oracle-java8-set-default
   sudo apt-get install nodejs npm
-env:
-  FOO: "BAR"
+
 
