@@ -14,8 +14,8 @@ keywords:
 script: |
   export DEBIAN_FRONTEND=noninteractive
   sudo apt-get install python-software-properties -y
-  echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+  echo debconf shared/accepted-oracle-license-v1-1 select true  sudo debconf-set-selections
+  echo debconf shared/accepted-oracle-license-v1-1 seen true  sudo debconf-set-selections
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886
   echo -e "\n" | sudo add-apt-repository ppa:webupd8team/java
   sudo apt-get update
@@ -24,3 +24,4 @@ script: |
   sudo apt-get install nodejs npm
 env:
   FOO: "BAR"
+
