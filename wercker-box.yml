@@ -2,7 +2,7 @@ name: docker-oraclejdk-mvn-node-py
 version: 1.0
 inherits: wercker-labs/docker
 type: service
-platform: ubuntu@12.0.4
+platform: ubuntu@12.04
 description: generic build box
 keywords:
  - ubuntu
