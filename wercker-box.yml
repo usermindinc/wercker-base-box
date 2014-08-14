@@ -1,7 +1,7 @@
 name: docker-oraclejdk-mvn-node-py
 version: 1.0.1
-inherits: wercker/ubuntu12.04-webessentials
-type: service
+inherits: wercker/ubuntu12.04-webessentials@1.0.4
+type: main
 platform: ubuntu@12.04
 description: generic build box
 keywords:
@@ -15,3 +15,14 @@ keywords:
 script: |
  export DEBIAN_FRONTEND=noninteractive
  sudo apt-get install python-software-properties -y
+ echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+ echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
+ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C2518248EEA14886a
+ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
+ echo -e "\n" | sudo add-apt-repository ppa:webupd8team/java
+ sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+ sudo apt-get update
+ sudo apt-get install oracle-java8-installer maven python2.7 -y
+ sudo apt-get install oracle-java8-set-default -y
+ sudo apt-get install nodejs npm -y
+ sudo apt-get insatll lxc-docker -y
