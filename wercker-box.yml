@@ -14,6 +14,8 @@ keywords:
  - python
 script: |
  export DEBIAN_FRONTEND=noninteractive
+ sudo apt-get update
+ sudo apt-get install apt-transport-https -y
  sudo apt-get install python-software-properties -y
  echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
  echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections
@@ -21,7 +23,6 @@ script: |
  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 36A1D7869245C8950F966E92D8576A8BA88D21E9
  echo -e "\n" | sudo add-apt-repository ppa:webupd8team/java
  sudo sh -c "echo deb https://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
- sudo apt-get install apt-transport-https -y
  sudo apt-get update
  sudo apt-get install oracle-java8-installer maven python2.7 -y
  sudo apt-get install oracle-java8-set-default -y
