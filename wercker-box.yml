@@ -22,5 +22,5 @@ script: |
   sudo apt-get install oracle-java8-installer maven python2.7 -y
   sudo apt-get install oracle-java8-set-default
   sudo apt-get install nodejs npm
-  sudo apt-get install postgresql postgresql-contrib
+
 
