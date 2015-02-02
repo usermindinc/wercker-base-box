@@ -27,5 +27,7 @@ script: |
   # maven from the install set above, so that the precise dependencies get installed first.
   sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu trusty main universe'
   sudo apt-get install maven -y
+  sudo apt-get update
   sudo add-apt-repository -r 'deb http://us.archive.ubuntu.com/ubuntu trusty main universe'
+  sudo apt-get update
 
