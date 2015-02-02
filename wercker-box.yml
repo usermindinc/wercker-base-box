@@ -1,5 +1,5 @@
 name: docker-oraclejdk-mvn-node-py
-version: 1.0.1
+version: 1.0.2
 inherits: wercker/ubuntu12.04-webessentials
 type: service
 platform: ubuntu@12.04
@@ -23,4 +23,11 @@ script: |
   sudo apt-get install oracle-java8-set-default
   sudo apt-get install nodejs npm
   sudo apt-get install postgresql postgresql-contrib
+  # Replace included maven with security patched version from trusty. Don't remove
+  # maven from the install set above, so that the precise dependencies get installed first.
+  sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu trusty main universe'
+  sudo apt-get update
+  sudo apt-get install maven -y
+  sudo add-apt-repository -r 'deb http://us.archive.ubuntu.com/ubuntu trusty main universe'
+  sudo apt-get update
 
